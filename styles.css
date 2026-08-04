@@ -75,6 +75,7 @@ a:hover {
 }
 
 .nav {
+    position: relative;
     width: min(100% - (var(--page-gutter) * 2), var(--max));
     margin: 0 auto;
     min-height: var(--header-h);
@@ -83,6 +84,71 @@ a:hover {
     justify-content: space-between;
     gap: 0.75rem 1.25rem;
     padding: 0.65rem 0;
+}
+
+.nav-toggle {
+    display: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 0.85rem;
+    background: rgba(248, 250, 252, 0.04);
+    color: var(--text);
+    cursor: pointer;
+    flex-shrink: 0;
+    place-items: center;
+    touch-action: manipulation;
+}
+
+.nav-toggle:hover {
+    border-color: rgba(245, 158, 11, 0.45);
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+    display: block;
+    width: 1.15rem;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle-bars {
+    position: relative;
+}
+
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle-bars::before {
+    top: -6px;
+}
+
+.nav-toggle-bars::after {
+    top: 6px;
+}
+
+.nav.is-open .nav-toggle-bars {
+    background: transparent;
+}
+
+.nav.is-open .nav-toggle-bars::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav.is-open .nav-toggle-bars::after {
+    top: 0;
+    transform: rotate(-45deg);
 }
 
 .brand {
@@ -392,32 +458,58 @@ a:hover {
 
 /* —— Móvil / tablets pequeñas —— */
 @media (max-width: 860px) {
+    body.nav-open {
+        overflow: hidden;
+    }
+
     .nav {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.35rem;
-        min-height: 0;
-        padding: 0.75rem 0 0.85rem;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.55rem 0;
     }
 
     .brand {
-        width: 100%;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .nav-toggle {
+        display: grid;
     }
 
     .nav-links {
+        display: none;
+        gap: 0.35rem;
         width: 100%;
-        justify-content: flex-start;
-        gap: 0.15rem 0.35rem;
-        row-gap: 0.1rem;
+        order: 3;
+        margin-top: 0.35rem;
+        padding: 0.65rem;
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        background: rgba(12, 18, 34, 0.96);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .nav.is-open .nav-links {
+        display: grid;
+    }
+
+    .nav-links li {
+        margin: 0;
     }
 
     .nav-links a {
-        font-size: 0.9rem;
-        padding: 0.15rem 0.45rem;
-        border-radius: 999px;
-        background: rgba(248, 250, 252, 0.04);
+        width: 100%;
+        min-height: 2.85rem;
+        padding: 0.65rem 0.9rem;
+        border-radius: 0.75rem;
+        font-size: 1rem;
+        color: var(--text);
+        background: rgba(248, 250, 252, 0.03);
     }
 
+    .nav-links a:hover,
     .nav-links a[aria-current="page"] {
         background: rgba(245, 158, 11, 0.14);
         color: var(--amber-soft);
@@ -460,18 +552,6 @@ a:hover {
     .hero-brand {
         max-width: none;
         font-size: clamp(2rem, 11vw, 2.6rem);
-    }
-
-    .nav-links {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.4rem;
-    }
-
-    .nav-links a {
-        justify-content: center;
-        text-align: center;
-        min-height: 2.65rem;
     }
 }
 

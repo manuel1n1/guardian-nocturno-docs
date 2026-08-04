@@ -26,7 +26,16 @@
                 <span class="brand-mark" aria-hidden="true">G</span>
                 <span>Guardián Nocturno</span>
             </a>
-            <ul class="nav-links">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="nav-menu"
+                aria-label="Abrir menú"
+            >
+                <span class="nav-toggle-bars" aria-hidden="true"></span>
+            </button>
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="terminos.html">Términos</a></li>
                 <li><a href="privacidad.html" aria-current="page">Privacidad</a></li>
@@ -195,5 +204,6 @@
     <script>
         document.getElementById("year").textContent = String(new Date().getFullYear());
     </script>
+    <script src="nav.js" defer></script>
 </body>
 </html>
