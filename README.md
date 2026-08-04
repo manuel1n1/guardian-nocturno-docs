@@ -4,12 +4,10 @@ Sitio público de Guardián Nocturno (GitHub Pages).
 
 | Página | Archivo |
 |--------|---------|
-| Inicio | [index.html](index.html) |
-| Términos | [terminos.html](terminos.html) |
-| Privacidad | [privacidad.html](privacidad.html) |
+| Inicio | `index.html` |
+| Términos | `terminos.html` |
+| Privacidad | `privacidad.html` |
 
-URL esperada tras activar Pages:
-
-`https://manuel1n1.github.io/manuel1n1.gn.github.io/`
+URL: https://manuel1n1.github.io/guardian-nocturno-docs/
 
 En el repo: **Settings → Pages → Deploy from a branch → `main` / root**.
