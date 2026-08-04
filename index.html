@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guardián Nocturno — Tu yo de mañana duerme tranquilo</title>
+    <meta
+        name="description"
+        content="Guardián Nocturno pausa llamadas y apps impulsivas hacia contactos sensibles durante la noche. Cuidado, sin sermones."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;650;700&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Principal">
+            <a class="brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true">G</span>
+                <span>Guardián Nocturno</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
+                <li><a href="#como-funciona">Cómo funciona</a></li>
+                <li><a href="terminos.html">Términos</a></li>
+                <li><a href="privacidad.html">Privacidad</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-label="Presentación">
+            <div class="hero-atmosphere" aria-hidden="true"></div>
+            <div class="hero-inner">
+                <p class="hero-brand">Guardián Nocturno</p>
+                <h1 class="hero-title">Tu yo de mañana duerme tranquilo.</h1>
+                <p class="hero-lead">
+                    Activa un modo de protección que pausa llamadas y apps impulsivas
+                    hacia contactos sensibles. Te cuida esta noche, sin culparte.
+                </p>
+                <div class="cta-row">
+                    <a class="button button-primary" href="#como-funciona">Ver cómo te cuida</a>
+                    <a class="button button-ghost" href="terminos.html">Términos y condiciones</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="como-funciona">
+            <h2 class="section-title">Una pausa cuando más la necesitas</h2>
+            <p class="section-lead">
+                Elige a quién proteger, activa el guardián y deja que la noche pase
+                con más calma. Al día siguiente decides con la cabeza despejada.
+            </p>
+            <div class="feature-grid">
+                <article class="feature">
+                    <h3>Contactos protegidos</h3>
+                    <p>
+                        Con el modo activo, las llamadas salientes a esos contactos
+                        se pausan. El resto de tu agenda sigue igual.
+                    </p>
+                </article>
+                <article class="feature">
+                    <h3>Desactivación consciente</h3>
+                    <p>
+                        No se apaga con un toque: PIN, patrón, frase o huella, y
+                        salidas seguras por tiempo u horario.
+                    </p>
+                </article>
+                <article class="feature">
+                    <h3>Apps que pueden esperar</h3>
+                    <p>
+                        Si lo configuras, ciertas apps piden un reto breve antes
+                        de abrirse mientras el guardián está activo.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <p class="quote">Te estamos cuidando esta noche.</p>
+            <p class="section-lead" style="margin-top: 2rem; margin-bottom: 0;">
+                Guardián Nocturno es una app Android. Los datos de contactos y
+                preferencias se guardan en tu dispositivo. Consulta la
+                <a href="privacidad.html">privacidad</a> y los
+                <a href="terminos.html">términos</a> para el detalle de uso,
+                permisos y servicios opcionales.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>© <span id="year"></span> Guardián Nocturno</span>
+            <span>
+                <a href="terminos.html">Términos</a>
+                ·
+                <a href="privacidad.html">Privacidad</a>
+            </span>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("year").textContent = String(new Date().getFullYear());
+    </script>
+</body>
+</html>
